@@ -151,6 +151,11 @@ html {
   font-weight: 275;
   text-align: center;
 }
+@media (min-width: 1200px) {
+  .description__title {
+    font-size: 2.4rem;
+  }
+}
 .description__title strong {
   font-weight: 600;
 }
@@ -176,16 +181,16 @@ html {
   transform: scale(1.1);
 }
 .card:nth-child(1) {
-  animation: 1s ease-out 400ms backwards appear;
+  animation: 1s ease-out 200ms backwards appear;
 }
 .card:nth-child(2) {
-  animation: 1s ease-out 800ms backwards appear;
+  animation: 1s ease-out 400ms backwards appear;
 }
 .card:nth-child(3) {
-  animation: 1s ease-out 1200ms backwards appear;
+  animation: 1s ease-out 600ms backwards appear;
 }
 .card:nth-child(4) {
-  animation: 1s ease-out 1600ms backwards appear;
+  animation: 1s ease-out 800ms backwards appear;
 }
 .card--cyan-border {
   border-top: 4px solid hsl(180deg, 62%, 55%);

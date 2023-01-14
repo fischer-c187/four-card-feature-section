@@ -7,6 +7,9 @@
         font-weight: 275;
         text-align: center;
 
+        @include desktop {
+            font-size: rem(36, 15);
+        }
         & strong {
             font-weight: 600;
         }
