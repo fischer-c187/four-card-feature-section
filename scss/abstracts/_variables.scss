@@ -1,0 +1,20 @@
+// font settings
+$base-font-size: 15px;
+$base-font-family: 'Poppins', sans-serif;
+
+// color
+$border-color: (
+    cyan-border: hsl(180, 62%, 55%),
+    red-border: hsl(0, 78%, 62%),
+    orange-border: hsl(34, 97%, 64%),
+    blue-border: hsl(212, 86%, 64%)
+);
+
+$text-colore: hsl(234, 12%, 34%);
+$bg-color: hsl(229, 6%, 66%);
+$card-bg-color: hsl(0, 0%, 98%);
+
+// breakpoint
+$breakpoints: (
+    desktop: 1200px
+)

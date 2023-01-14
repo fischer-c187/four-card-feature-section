@@ -1,0 +1,11 @@
+.card-grid{
+    display: grid;
+    justify-content: center;
+    grid-template: repeat(4, 222px) / 1fr;
+    gap: em(30, 15);
+
+    @include desktop {
+        grid-template: repeat(4, 110px) / repeat(3, 350px);
+        @include row-in-grid;
+    }
+}

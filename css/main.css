@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/***
+    The new CSS reset - version 1.8.2 (last updated 23.12.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+pre {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: "";
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+@keyframes appear {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+html {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  color: hsl(234deg, 12%, 34%);
+}
+
+.page-wrapper {
+  width: clamp(375px, 85%, 1400px);
+  margin: 5.3333333333em auto;
+}
+
+.card-grid {
+  display: grid;
+  justify-content: center;
+  grid-template: repeat(4, 222px)/1fr;
+  gap: 2em;
+}
+@media (min-width: 1200px) {
+  .card-grid {
+    grid-template: repeat(4, 110px)/repeat(3, 350px);
+  }
+  .card-grid--top {
+    grid-row: 1/span 2;
+  }
+  .card-grid--middle {
+    grid-row: 2/span 2;
+  }
+  .card-grid--end {
+    grid-row: 3/span 2;
+  }
+}
+
+.description {
+  margin: auto;
+  margin-bottom: 5.6666666667em;
+  max-width: 500px;
+}
+.description__title {
+  font-size: 1.6rem;
+  font-weight: 275;
+  text-align: center;
+}
+.description__title strong {
+  font-weight: 600;
+}
+.description__text {
+  text-align: center;
+  font-weight: 400;
+  line-height: 25px;
+  opacity: 0.5;
+  margin-top: 1.0666666667em;
+}
+
+.card {
+  background-color: white;
+  padding: 1.8666666667em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 0.5);
+  border-radius: 8px;
+  transition: transform 1s;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card:nth-child(1) {
+  animation: 1s ease-out 400ms backwards appear;
+}
+.card:nth-child(2) {
+  animation: 1s ease-out 800ms backwards appear;
+}
+.card:nth-child(3) {
+  animation: 1s ease-out 1200ms backwards appear;
+}
+.card:nth-child(4) {
+  animation: 1s ease-out 1600ms backwards appear;
+}
+.card--cyan-border {
+  border-top: 4px solid hsl(180deg, 62%, 55%);
+}
+.card--red-border {
+  border-top: 4px solid hsl(0deg, 78%, 62%);
+}
+.card--orange-border {
+  border-top: 4px solid hsl(34deg, 97%, 64%);
+}
+.card--blue-border {
+  border-top: 4px solid hsl(212deg, 86%, 64%);
+}
+.card__title {
+  font-size: 1.3333333333rem;
+  font-weight: 600;
+}
+.card__description {
+  font-size: 0.8666666667rem;
+  opacity: 0.5;
+}
+.card__logo {
+  align-self: end;
+  margin-top: auto;
+  width: 54px;
+}
+@media (min-width: 1200px) {
+  .card__logo {
+    width: 64px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

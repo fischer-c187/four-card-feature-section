@@ -1,0 +1,38 @@
+.card {
+    background-color: white;
+    padding: em(28, 15);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 0.5);
+    border-radius: 8px;
+    transition: transform 1s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    @include appear(400ms);
+
+    @include card-border;
+
+    &__title {
+        font-size: rem(20);
+        font-weight: 600;
+    }
+
+    &__description {
+        font-size: rem(13);
+        opacity: 0.5;
+    }
+
+    &__logo {
+        align-self: end;
+        margin-top: auto;
+        width: 54px;
+
+        @include desktop {
+            width: 64px;
+        }
+    }
+}

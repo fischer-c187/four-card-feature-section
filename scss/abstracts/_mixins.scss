@@ -1,0 +1,33 @@
+// make border top for each card with a specific color
+@mixin card-border {
+    @each $selector, $color in $border-color{
+        &--#{$selector} {
+            border-top: 4px solid $color;
+        }
+    }
+}
+
+// media queries
+@mixin desktop {
+    @media (min-width: map-get($breakpoints, desktop)) { @content; }
+}
+
+
+@mixin row-in-grid {
+    $i: 1;
+    @each $place in (top, middle, end) {
+        &--#{$place} {
+            grid-row: $i / span 2;
+        }
+        $i: $i + 1;
+    }
+}
+
+@mixin appear($delay: 200ms) {
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            animation: 1s ease-out $i*$delay backwards appear;
+        }
+    }
+
+}
